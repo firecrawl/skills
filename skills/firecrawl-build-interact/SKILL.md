@@ -1,5 +1,5 @@
 ---
-name: firecrawl-interact
+name: firecrawl-build-interact
 description: Integrate Firecrawl `/interact` into product code for dynamic pages and browser actions after scraping. Use when a feature needs clicks, form fills, pagination, authentication-aware flows, or other multi-step interactions that plain `/scrape` cannot complete.
 license: ISC
 metadata:
@@ -16,7 +16,7 @@ inputs:
     required: false
 ---
 
-# Firecrawl Interact
+# Firecrawl Build Interact
 
 Use this when `/scrape` is not enough because the feature needs to act on the page.
 
@@ -47,8 +47,8 @@ Use this when `/scrape` is not enough because the feature needs to act on the pa
 
 ## Escalation Rules
 
-- If the page can be read directly, stay on [firecrawl-scrape](../firecrawl-scrape/SKILL.md).
-- If you need a site-wide or section-wide extraction job, use [firecrawl-crawl](../firecrawl-crawl/SKILL.md) instead of driving one page at a time.
+- If the page can be read directly, stay on [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
+- If you need a site-wide or section-wide extraction job, use [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md) instead of driving one page at a time.
 
 ## Docs
 
@@ -56,6 +56,6 @@ Use this when `/scrape` is not enough because the feature needs to act on the pa
 
 ## See Also
 
-- [firecrawl](../firecrawl/SKILL.md)
-- [firecrawl-scrape](../firecrawl-scrape/SKILL.md)
-- [firecrawl-search](../firecrawl-search/SKILL.md)
+- [firecrawl-build](../firecrawl-build/SKILL.md)
+- [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md)
+- [firecrawl-build-search](../firecrawl-build-search/SKILL.md)

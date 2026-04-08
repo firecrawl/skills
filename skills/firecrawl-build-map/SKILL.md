@@ -1,5 +1,5 @@
 ---
-name: firecrawl-map
+name: firecrawl-build-map
 description: Integrate Firecrawl `/map` into product code for URL discovery on a known site. Use when a feature needs to find pages before scraping or crawling, especially on large docs sites, blogs, or help centers where the exact target URLs are not known yet.
 license: ISC
 metadata:
@@ -16,7 +16,7 @@ inputs:
     required: false
 ---
 
-# Firecrawl Map
+# Firecrawl Build Map
 
 Use this when the product knows the site but not the exact URLs.
 
@@ -34,8 +34,8 @@ Use this when the product knows the site but not the exact URLs.
 
 ## When Not To Use It
 
-- If you already have the exact URL, use [firecrawl-scrape](../firecrawl-scrape/SKILL.md).
-- If the feature begins with a general query across the web, use [firecrawl-search](../firecrawl-search/SKILL.md).
+- If you already have the exact URL, use [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
+- If the feature begins with a general query across the web, use [firecrawl-build-search](../firecrawl-build-search/SKILL.md).
 
 ## Docs
 
@@ -43,6 +43,6 @@ Use this when the product knows the site but not the exact URLs.
 
 ## See Also
 
-- [firecrawl](../firecrawl/SKILL.md)
-- [firecrawl-search](../firecrawl-search/SKILL.md)
-- [firecrawl-crawl](../firecrawl-crawl/SKILL.md)
+- [firecrawl-build](../firecrawl-build/SKILL.md)
+- [firecrawl-build-search](../firecrawl-build-search/SKILL.md)
+- [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md)

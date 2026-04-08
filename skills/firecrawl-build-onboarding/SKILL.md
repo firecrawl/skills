@@ -1,5 +1,5 @@
 ---
-name: firecrawl-app-onboarding
+name: firecrawl-build-onboarding
 description: Get Firecrawl credentials and SDK setup into a project. Use when an application needs `FIRECRAWL_API_KEY`, when an agent should add Firecrawl to `.env`, when the user wants to authenticate Firecrawl for app code, or when choosing the first SDK and docs for a new Firecrawl integration.
 license: ISC
 metadata:
@@ -20,7 +20,7 @@ references:
   - references/project-setup.md
 ---
 
-# Firecrawl App Onboarding
+# Firecrawl Build Onboarding
 
 Use this skill for the application-integration path from Firecrawl's onboarding flow.
 
@@ -54,9 +54,9 @@ FIRECRAWL_API_URL=https://your-firecrawl-instance.example.com
 | **Run the browser auth flow and save `FIRECRAWL_API_KEY`** | [references/auth-flow.md](references/auth-flow.md) |
 | **Install the right SDK** | [references/sdk-installation.md](references/sdk-installation.md) |
 | **Put credentials into `.env` or project config** | [references/project-setup.md](references/project-setup.md) |
-| **Choose the right endpoint after setup** | [firecrawl](../firecrawl/SKILL.md) |
-| **Start implementation from a known URL** | [firecrawl-scrape](../firecrawl-scrape/SKILL.md) |
-| **Start implementation from a query** | [firecrawl-search](../firecrawl-search/SKILL.md) |
+| **Choose the right endpoint after setup** | [firecrawl-build](../firecrawl-build/SKILL.md) |
+| **Start implementation from a known URL** | [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md) |
+| **Start implementation from a query** | [firecrawl-build-search](../firecrawl-build-search/SKILL.md) |
 
 ## After Setup
 
@@ -65,9 +65,3 @@ Once the key is present:
 1. pick the narrowest endpoint that matches the feature
 2. add the SDK or REST call in code
 3. use the endpoint-specific skills in this repo for implementation guidance
-
-## See Also
-
-- [firecrawl](../firecrawl/SKILL.md) - choose the right endpoint
-- [firecrawl-scrape](../firecrawl-scrape/SKILL.md) - default starting point when you have a URL
-- [firecrawl-search](../firecrawl-search/SKILL.md) - when you need discovery before extraction

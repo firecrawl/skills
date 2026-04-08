@@ -1,5 +1,5 @@
 ---
-name: firecrawl-search
+name: firecrawl-build-search
 description: Integrate Firecrawl `/search` into product code and agent workflows. Use when an app needs discovery before extraction, when the feature starts with a query instead of a URL, or when the system should search the web and optionally hydrate result content.
 license: ISC
 metadata:
@@ -16,7 +16,7 @@ inputs:
     required: false
 ---
 
-# Firecrawl Search
+# Firecrawl Build Search
 
 Use this when the application starts with a query, not a URL.
 
@@ -41,9 +41,9 @@ Use this when the application starts with a query, not a URL.
 
 ## Escalation Rules
 
-- If you already have the URL, use [firecrawl-scrape](../firecrawl-scrape/SKILL.md).
-- If the result page then requires clicks or form interaction, escalate to [firecrawl-interact](../firecrawl-interact/SKILL.md).
-- If the search target is a known site and you only need URLs on that site, [firecrawl-map](../firecrawl-map/SKILL.md) may be a better fit.
+- If you already have the URL, use [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
+- If the result page then requires clicks or form interaction, escalate to [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md).
+- If the search target is a known site and you only need URLs on that site, [firecrawl-build-map](../firecrawl-build-map/SKILL.md) may be a better fit.
 
 ## Implementation Notes
 
@@ -57,6 +57,6 @@ Use this when the application starts with a query, not a URL.
 
 ## See Also
 
-- [firecrawl](../firecrawl/SKILL.md)
-- [firecrawl-scrape](../firecrawl-scrape/SKILL.md)
-- [firecrawl-map](../firecrawl-map/SKILL.md)
+- [firecrawl-build](../firecrawl-build/SKILL.md)
+- [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md)
+- [firecrawl-build-map](../firecrawl-build-map/SKILL.md)

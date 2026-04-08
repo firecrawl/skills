@@ -12,12 +12,12 @@
   "license": "ISC",
   "keywords": ["firecrawl", "web-scraping", "search", "crawl", "interact", "mcp"],
   "skills": [
-    "./skills/firecrawl",
-    "./skills/firecrawl-app-onboarding",
-    "./skills/firecrawl-scrape",
-    "./skills/firecrawl-search",
-    "./skills/firecrawl-interact",
-    "./skills/firecrawl-crawl",
-    "./skills/firecrawl-map"
+    "./skills/firecrawl-build",
+    "./skills/firecrawl-build-onboarding",
+    "./skills/firecrawl-build-scrape",
+    "./skills/firecrawl-build-search",
+    "./skills/firecrawl-build-interact",
+    "./skills/firecrawl-build-crawl",
+    "./skills/firecrawl-build-map"
   ]
 }

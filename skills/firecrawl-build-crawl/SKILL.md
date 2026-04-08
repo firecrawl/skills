@@ -1,5 +1,5 @@
 ---
-name: firecrawl-crawl
+name: firecrawl-build-crawl
 description: Integrate Firecrawl `/crawl` into product code for bulk extraction across a site or site section. Use when a feature needs many related pages, such as documentation sets, help centers, or blogs, and page-by-page `/scrape` would be too manual.
 license: ISC
 metadata:
@@ -16,7 +16,7 @@ inputs:
     required: false
 ---
 
-# Firecrawl Crawl
+# Firecrawl Build Crawl
 
 Use this when the product needs many pages from the same site, not just one.
 
@@ -34,8 +34,8 @@ Use this when the product needs many pages from the same site, not just one.
 
 ## When Not To Use It
 
-- If you only need one known URL, use [firecrawl-scrape](../firecrawl-scrape/SKILL.md).
-- If you first need to discover URLs on a single site, start with [firecrawl-map](../firecrawl-map/SKILL.md).
+- If you only need one known URL, use [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
+- If you first need to discover URLs on a single site, start with [firecrawl-build-map](../firecrawl-build-map/SKILL.md).
 
 ## Docs
 
@@ -43,6 +43,6 @@ Use this when the product needs many pages from the same site, not just one.
 
 ## See Also
 
-- [firecrawl](../firecrawl/SKILL.md)
-- [firecrawl-map](../firecrawl-map/SKILL.md)
-- [firecrawl-scrape](../firecrawl-scrape/SKILL.md)
+- [firecrawl-build](../firecrawl-build/SKILL.md)
+- [firecrawl-build-map](../firecrawl-build-map/SKILL.md)
+- [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md)

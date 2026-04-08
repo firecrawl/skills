@@ -6,13 +6,13 @@ Distribution repo for Firecrawl agent skills focused on the application-integrat
 
 All current skills in this repo are authored here:
 
-- `skills/firecrawl/`
-- `skills/firecrawl-app-onboarding/`
-- `skills/firecrawl-scrape/`
-- `skills/firecrawl-search/`
-- `skills/firecrawl-interact/`
-- `skills/firecrawl-crawl/`
-- `skills/firecrawl-map/`
+- `skills/firecrawl-build/`
+- `skills/firecrawl-build-onboarding/`
+- `skills/firecrawl-build-scrape/`
+- `skills/firecrawl-build-search/`
+- `skills/firecrawl-build-interact/`
+- `skills/firecrawl-build-crawl/`
+- `skills/firecrawl-build-map/`
 
 Plugin metadata and top-level docs are also safe to edit:
 

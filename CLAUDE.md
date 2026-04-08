@@ -1,6 +1,6 @@
 # Firecrawl Skills
 
-This repo is for Firecrawl application-integration skills.
+This repo is for Firecrawl build and application-integration skills.
 
 - Use these skills when building product code that calls Firecrawl APIs.
 - Use `firecrawl/cli` for live web tasks performed through the terminal during an agent session.

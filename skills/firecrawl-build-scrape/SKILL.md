@@ -1,5 +1,5 @@
 ---
-name: firecrawl-scrape
+name: firecrawl-build-scrape
 description: Integrate Firecrawl `/scrape` into product code for single-page extraction. Use when an app already has a URL and needs markdown, HTML, links, screenshots, metadata, or structured page output. Prefer this skill over broader crawl patterns when the feature is page-level.
 license: ISC
 metadata:
@@ -16,7 +16,7 @@ inputs:
     required: false
 ---
 
-# Firecrawl Scrape
+# Firecrawl Build Scrape
 
 Use this when the application already has the URL and needs content from one page.
 
@@ -42,9 +42,9 @@ Use this when the application already has the URL and needs content from one pag
 
 ## Escalation Rules
 
-- If you do not have the URL yet, start with [firecrawl-search](../firecrawl-search/SKILL.md).
-- If content requires clicks, typing, or multi-step navigation, escalate to [firecrawl-interact](../firecrawl-interact/SKILL.md).
-- If you need many pages from the same site, consider [firecrawl-crawl](../firecrawl-crawl/SKILL.md) or [firecrawl-map](../firecrawl-map/SKILL.md).
+- If you do not have the URL yet, start with [firecrawl-build-search](../firecrawl-build-search/SKILL.md).
+- If content requires clicks, typing, or multi-step navigation, escalate to [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md).
+- If you need many pages from the same site, consider [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md) or [firecrawl-build-map](../firecrawl-build-map/SKILL.md).
 
 ## Implementation Notes
 
@@ -58,6 +58,6 @@ Use this when the application already has the URL and needs content from one pag
 
 ## See Also
 
-- [firecrawl](../firecrawl/SKILL.md)
-- [firecrawl-search](../firecrawl-search/SKILL.md)
-- [firecrawl-interact](../firecrawl-interact/SKILL.md)
+- [firecrawl-build](../firecrawl-build/SKILL.md)
+- [firecrawl-build-search](../firecrawl-build-search/SKILL.md)
+- [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md)

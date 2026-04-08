@@ -1,5 +1,5 @@
 ---
-name: firecrawl
+name: firecrawl-build
 description: Integrate Firecrawl into an application, agent, or workflow. Use when adding Firecrawl to a codebase, choosing between `/scrape`, `/search`, `/interact`, `/crawl`, and `/map`, setting up `FIRECRAWL_API_KEY`, or wiring a Firecrawl SDK or REST call into product code. Do not use this skill for ad hoc web tasks during the current session; use `firecrawl/cli` for those.
 license: ISC
 metadata:
@@ -21,7 +21,7 @@ references:
   - references/auth-and-env.md
 ---
 
-# Firecrawl
+# Firecrawl Build
 
 Use this skill when the task is "build with Firecrawl," not "use Firecrawl as a terminal tool right now."
 
@@ -46,18 +46,18 @@ Start with the narrowest endpoint that fits:
 
 ## What Do You Need?
 
-| Task                                                 | Reference                                                                |
-| ---------------------------------------------------- | ------------------------------------------------------------------------ |
-| **Choose the right endpoint**                        | [references/endpoint-selection.md](references/endpoint-selection.md)     |
-| **Wire Firecrawl into product code**                 | [references/integration-patterns.md](references/integration-patterns.md) |
-| **Install an SDK or use REST**                       | [references/sdk-installation.md](references/sdk-installation.md)         |
-| **Set up `FIRECRAWL_API_KEY` or self-hosted config** | [references/auth-and-env.md](references/auth-and-env.md)                 |
-| **Get credentials into the project**                 | [firecrawl-app-onboarding](../firecrawl-app-onboarding/SKILL.md)         |
-| **Implement single-page extraction**                 | [firecrawl-scrape](../firecrawl-scrape/SKILL.md)                         |
-| **Implement discovery-first flows**                  | [firecrawl-search](../firecrawl-search/SKILL.md)                         |
-| **Implement post-scrape browser actions**            | [firecrawl-interact](../firecrawl-interact/SKILL.md)                     |
-| **Implement bulk extraction**                        | [firecrawl-crawl](../firecrawl-crawl/SKILL.md)                           |
-| **Implement URL discovery**                          | [firecrawl-map](../firecrawl-map/SKILL.md)                               |
+| Task | Reference |
+|---|---|
+| **Choose the right endpoint** | [references/endpoint-selection.md](references/endpoint-selection.md) |
+| **Wire Firecrawl into product code** | [references/integration-patterns.md](references/integration-patterns.md) |
+| **Install an SDK or use REST** | [references/sdk-installation.md](references/sdk-installation.md) |
+| **Set up `FIRECRAWL_API_KEY` or self-hosted config** | [references/auth-and-env.md](references/auth-and-env.md) |
+| **Get credentials into the project** | [firecrawl-build-onboarding](../firecrawl-build-onboarding/SKILL.md) |
+| **Implement single-page extraction** | [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md) |
+| **Implement discovery-first flows** | [firecrawl-build-search](../firecrawl-build-search/SKILL.md) |
+| **Implement post-scrape browser actions** | [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md) |
+| **Implement bulk extraction** | [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md) |
+| **Implement URL discovery** | [firecrawl-build-map](../firecrawl-build-map/SKILL.md) |
 
 ## Default Integration Order
 
