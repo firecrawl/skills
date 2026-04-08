@@ -1,6 +1,6 @@
 ---
 name: firecrawl-build-onboarding
-description: Get Firecrawl credentials and SDK setup into a project. Use when an application needs `FIRECRAWL_API_KEY`, when an agent should add Firecrawl to `.env`, when the user wants to authenticate Firecrawl for app code, or when choosing the first SDK and docs for a new Firecrawl integration.
+description: Get Firecrawl credentials and SDK setup into a project. Use when an application needs `FIRECRAWL_API_KEY`, when an agent should add Firecrawl to `.env`, when the user wants to authenticate Firecrawl for app code, or when choosing the first SDK and docs for a new Firecrawl integration. If the task is live web work during the current session, hand off to `firecrawl/cli` instead; if a human still needs signup or browser authorization first, start with the website onboarding flow and then return here.
 license: ISC
 metadata:
   author: firecrawl
@@ -31,6 +31,8 @@ Use this skill for the application-integration path from Firecrawl's onboarding 
 - you are adding Firecrawl to an app for the first time
 - you need to choose the first SDK or REST path
 
+Use `https://www.firecrawl.dev/agent-onboarding/SKILL.md` first when the human still needs to sign up, sign in, or authorize access in the browser.
+
 Do not use this skill for CLI install flows beyond a brief pointer. That belongs to `firecrawl/cli`.
 
 ## Quick Start
@@ -47,6 +49,11 @@ If the project is self-hosted, also set:
 FIRECRAWL_API_URL=https://your-firecrawl-instance.example.com
 ```
 
+Then decide which integration path applies:
+
+- **Fresh project** -> choose the target stack, install the SDK, add the first Firecrawl call, and run a smoke test
+- **Existing project** -> inspect the repo first, then integrate Firecrawl where the project already handles third-party APIs and env vars
+
 ## What Do You Need?
 
 | Task | Reference |
@@ -55,6 +62,7 @@ FIRECRAWL_API_URL=https://your-firecrawl-instance.example.com
 | **Install the right SDK** | [references/sdk-installation.md](references/sdk-installation.md) |
 | **Put credentials into `.env` or project config** | [references/project-setup.md](references/project-setup.md) |
 | **Choose the right endpoint after setup** | [firecrawl-build](../firecrawl-build/SKILL.md) |
+| **Need live web tooling during this task instead** | `firecrawl/cli` |
 | **Start implementation from a known URL** | [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md) |
 | **Start implementation from a query** | [firecrawl-build-search](../firecrawl-build-search/SKILL.md) |
 
@@ -62,6 +70,10 @@ FIRECRAWL_API_URL=https://your-firecrawl-instance.example.com
 
 Once the key is present:
 
-1. pick the narrowest endpoint that matches the feature
-2. add the SDK or REST call in code
-3. use the endpoint-specific skills in this repo for implementation guidance
+1. decide whether this is a fresh project or an existing codebase
+2. ask what Firecrawl should do in the product
+3. pick the narrowest endpoint that matches that behavior
+4. add the SDK or REST call in code
+5. run a smoke test that proves one real Firecrawl request succeeds
+6. use the endpoint-specific skills in this repo for implementation guidance
+7. if you also need live web tooling during the current task, use `firecrawl/cli` alongside this repo

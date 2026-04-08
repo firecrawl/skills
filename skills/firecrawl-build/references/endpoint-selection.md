@@ -1,5 +1,9 @@
 # Endpoint Selection
 
+Ask this before picking an endpoint:
+
+- **What should Firecrawl do in the product?**
+
 Use the narrowest endpoint that matches the feature:
 
 | Endpoint | Use when | Do not start here when |

@@ -73,9 +73,21 @@ That path installs terminal commands and CLI-native skills for ad hoc web tasks.
 Use this repo. The skills here focus on:
 
 - getting an API key into `.env`
+- choosing fresh project vs existing project flow
 - choosing the right endpoint
+- asking what Firecrawl should do in the product
 - wiring SDKs or REST calls into code
+- inspecting an existing repo before integrating
+- running a smoke test so the integration is proven, not just written
 - avoiding CLI-only guidance when the real task is product integration
+
+Default build flow:
+
+1. decide whether the project is fresh or existing
+2. ask what Firecrawl should do in the product
+3. route to `/scrape`, `/search`, `/interact`, `/crawl`, or `/map`
+4. integrate using the project's existing conventions
+5. verify one real Firecrawl request succeeds
 
 ## Source Of Truth
 

@@ -15,10 +15,12 @@ inputs:
     description: Optional base URL for self-hosted Firecrawl deployments. Only set this when the project is not using the hosted `api.firecrawl.dev`.
     required: false
 references:
+  - references/project-intake.md
   - references/endpoint-selection.md
   - references/integration-patterns.md
   - references/sdk-installation.md
   - references/auth-and-env.md
+  - references/verification.md
 ---
 
 # Firecrawl Build
@@ -36,7 +38,16 @@ If the task is "search the web," "scrape this page for me," or "interact with a 
 
 ## Quick Start
 
-Start with the narrowest endpoint that fits:
+First choose the project mode:
+
+- **Fresh project** -> choose the stack, install the SDK, add env vars, and run a smoke test
+- **Existing project** -> inspect the repo first, match its conventions, then integrate in place
+
+Then ask the required question:
+
+- **What should Firecrawl do in this product?**
+
+Route from that answer to the narrowest endpoint that fits:
 
 - `/scrape` for one known URL
 - `/search` when you have a query instead of a URL
@@ -44,10 +55,21 @@ Start with the narrowest endpoint that fits:
 - `/crawl` for many pages in the same site section
 - `/map` when you know the site but not the URLs yet
 
+## Required Intake
+
+Always do these before writing integration code:
+
+1. Decide whether this is a **fresh project** or an **existing project**.
+2. Ask what Firecrawl should do in the product.
+3. If this is an existing project, inspect the repo before choosing SDK, REST, file locations, or env handling.
+
+For the full checklist, see [references/project-intake.md](references/project-intake.md).
+
 ## What Do You Need?
 
 | Task | Reference |
 |---|---|
+| **Choose fresh project vs existing project flow** | [references/project-intake.md](references/project-intake.md) |
 | **Choose the right endpoint** | [references/endpoint-selection.md](references/endpoint-selection.md) |
 | **Wire Firecrawl into product code** | [references/integration-patterns.md](references/integration-patterns.md) |
 | **Install an SDK or use REST** | [references/sdk-installation.md](references/sdk-installation.md) |
@@ -58,13 +80,17 @@ Start with the narrowest endpoint that fits:
 | **Implement post-scrape browser actions** | [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md) |
 | **Implement bulk extraction** | [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md) |
 | **Implement URL discovery** | [firecrawl-build-map](../firecrawl-build-map/SKILL.md) |
+| **Verify the integration actually works** | [references/verification.md](references/verification.md) |
 
 ## Default Integration Order
 
 1. Get `FIRECRAWL_API_KEY` or `FIRECRAWL_API_URL` right.
-2. Choose the endpoint that matches the product behavior.
-3. Install the SDK for the target stack, or call REST directly.
-4. Keep endpoint-specific implementation details in the narrower skills linked above.
+2. Decide whether this is a fresh project or an existing codebase.
+3. Ask what Firecrawl should do in the product, then choose the endpoint that matches that behavior.
+4. For existing projects, inspect the repo and match its conventions before coding.
+5. Install the SDK for the target stack, or call REST directly.
+6. Keep endpoint-specific implementation details in the narrower skills linked above.
+7. Run a smoke test that proves a real Firecrawl request succeeds.
 
 ## Boundary With The CLI
 
