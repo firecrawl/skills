@@ -1,0 +1,14 @@
+{
+  "name": "firecrawl-skills",
+  "owner": {
+    "name": "Firecrawl",
+    "email": "support@firecrawl.dev"
+  },
+  "plugins": [
+    {
+      "name": "firecrawl",
+      "source": "./",
+      "description": "Skills and MCP configuration for integrating Firecrawl scrape, search, interact, crawl, and map into apps and agents."
+    }
+  ]
+}

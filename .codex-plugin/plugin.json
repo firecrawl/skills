@@ -1,0 +1,16 @@
+{
+  "name": "firecrawl",
+  "displayName": "Firecrawl",
+  "description": "Skills and MCP configuration for integrating Firecrawl scrape, search, interact, crawl, and map into apps and agents.",
+  "version": "0.1.0",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "author": {
+    "name": "Firecrawl",
+    "url": "https://www.firecrawl.dev"
+  },
+  "homepage": "https://www.firecrawl.dev",
+  "repository": "https://github.com/firecrawl/skills",
+  "license": "ISC",
+  "keywords": ["firecrawl", "web-scraping", "search", "crawl", "interact", "mcp"]
+}

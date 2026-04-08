@@ -1,0 +1,72 @@
+# Firecrawl Skills Repo
+
+Distribution repo for Firecrawl agent skills focused on the application-integration path.
+
+## Safe to edit
+
+All current skills in this repo are authored here:
+
+- `skills/firecrawl/`
+- `skills/firecrawl-app-onboarding/`
+- `skills/firecrawl-scrape/`
+- `skills/firecrawl-search/`
+- `skills/firecrawl-interact/`
+- `skills/firecrawl-crawl/`
+- `skills/firecrawl-map/`
+
+Plugin metadata and top-level docs are also safe to edit:
+
+- `.cursor-plugin/`
+- `.claude-plugin/`
+- `.codex-plugin/`
+- `README.md`
+- `AGENTS.md`
+- `.mcp.json`
+- `mcp.json`
+
+## Intent
+
+Prefer these skills when the task is:
+
+- adding Firecrawl to a codebase
+- choosing between `/scrape`, `/search`, `/interact`, `/crawl`, and `/map`
+- getting `FIRECRAWL_API_KEY` into `.env`
+- selecting SDKs or REST patterns for product code
+
+Do not use this repo as the primary source for:
+
+- one-off web research
+- ad hoc scraping during the current coding session
+- terminal command reference
+- CLI installation or MCP setup beyond a brief pointer
+
+Those workflows belong to `firecrawl/cli`.
+
+## Authoring Rules
+
+- Keep each `SKILL.md` concise and trigger-oriented.
+- Lead with "use this when..." guidance.
+- Favor endpoint names in slash notation: `/scrape`, `/search`, `/interact`, `/crawl`, `/map`.
+- Keep CLI references short and defer to `firecrawl/cli` instead of duplicating command manuals.
+- Treat [`https://www.firecrawl.dev/agent-onboarding/SKILL.md`](https://www.firecrawl.dev/agent-onboarding/SKILL.md) as the canonical source for the two-path framing.
+
+## Coverage Priority
+
+Current priority order:
+
+1. `/scrape`
+2. `/search`
+3. `/interact`
+4. `/crawl`
+5. `/map`
+
+## Repo Shape
+
+Expected layout:
+
+- `skills/<skill-name>/SKILL.md` for the skill itself
+- `skills/<skill-name>/references/` for deeper docs and recipes
+- plugin metadata under `.cursor-plugin/`, `.claude-plugin/`, and `.codex-plugin/`
+- top-level docs in `README.md` and this file
+
+Keep supporting references one level deep.
