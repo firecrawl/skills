@@ -1,6 +1,6 @@
 ---
 name: firecrawl-build-onboarding
-description: Get Firecrawl credentials and SDK setup into a project. Use when an application needs `FIRECRAWL_API_KEY`, when an agent should add Firecrawl to `.env`, when the user wants to authenticate Firecrawl for app code, or when choosing the first SDK and docs for a new Firecrawl integration. If the task is live web work during the current session, hand off to `firecrawl/cli` instead; if a human still needs signup or browser authorization first, start with the website onboarding flow and then return here.
+description: Get Firecrawl credentials and SDK setup into a project. Use when an application needs `FIRECRAWL_API_KEY`, when an agent should add Firecrawl to `.env`, when the user wants to authenticate Firecrawl for app code, or when choosing the first SDK and docs for a new Firecrawl integration. If the task is live web work during the current session, hand off to `firecrawl/cli` instead. This skill includes its own browser auth flow, so it does not depend on the website onboarding skill.
 license: ISC
 metadata:
   author: firecrawl
@@ -31,7 +31,7 @@ Use this skill for the application-integration path from Firecrawl's onboarding 
 - you are adding Firecrawl to an app for the first time
 - you need to choose the first SDK or REST path
 
-Use `https://www.firecrawl.dev/agent-onboarding/SKILL.md` first when the human still needs to sign up, sign in, or authorize access in the browser.
+If the human still needs to sign up, sign in, or authorize access in the browser, use the auth flow reference in this skill.
 
 Do not use this skill for CLI install flows beyond a brief pointer. That belongs to `firecrawl/cli`.
 

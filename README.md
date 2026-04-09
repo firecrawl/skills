@@ -54,6 +54,8 @@ If Firecrawl later syncs skills from other repos, that distinction should be doc
 
 Get your API key at [firecrawl.dev/app](https://www.firecrawl.dev/app).
 
+If you do not already have an API key, use [`firecrawl-build-onboarding`](./skills/firecrawl-build-onboarding) in this repo. It includes the browser authorization flow directly and does not require the website onboarding skill.
+
 ## Relationship To The CLI Repo
 
 Firecrawl has two distinct agent workflows:
