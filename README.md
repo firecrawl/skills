@@ -17,15 +17,15 @@ Then select the skills you want to install.
 
 ## Available Skills
 
-| Skill                                                           | Description                                                             | Source        |
-| --------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------- |
-| [`firecrawl-build`](./skills/firecrawl-build)                               | Firecrawl application API umbrella skill                                | Authored here |
+| Skill                                                               | Description                                                             | Source        |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------- | ------------- |
+| [`firecrawl-build`](./skills/firecrawl-build)                       | Firecrawl application API umbrella skill                                | Authored here |
 | [`firecrawl-build-onboarding`](./skills/firecrawl-build-onboarding) | Get `FIRECRAWL_API_KEY` into a project and choose the right SDK/docs    | Authored here |
-| [`firecrawl-build-scrape`](./skills/firecrawl-build-scrape)                 | Integrate `/scrape` for single-page extraction                          | Authored here |
-| [`firecrawl-build-search`](./skills/firecrawl-build-search)                 | Integrate `/search` for discovery-first workflows                       | Authored here |
-| [`firecrawl-build-interact`](./skills/firecrawl-build-interact)             | Integrate `/interact` for clicks, forms, and dynamic flows after scrape | Authored here |
-| [`firecrawl-build-crawl`](./skills/firecrawl-build-crawl)                   | Integrate `/crawl` for bulk extraction across a site or section         | Authored here |
-| [`firecrawl-build-map`](./skills/firecrawl-build-map)                       | Integrate `/map` for URL discovery on a known site                      | Authored here |
+| [`firecrawl-build-scrape`](./skills/firecrawl-build-scrape)         | Integrate `/scrape` for single-page extraction                          | Authored here |
+| [`firecrawl-build-search`](./skills/firecrawl-build-search)         | Integrate `/search` for discovery-first workflows                       | Authored here |
+| [`firecrawl-build-interact`](./skills/firecrawl-build-interact)     | Integrate `/interact` for clicks, forms, and dynamic flows after scrape | Authored here |
+| [`firecrawl-build-crawl`](./skills/firecrawl-build-crawl)           | Integrate `/crawl` for bulk extraction across a site or section         | Authored here |
+| [`firecrawl-build-map`](./skills/firecrawl-build-map)               | Integrate `/map` for URL discovery on a known site                      | Authored here |
 
 The current emphasis is on `/scrape`, `/search`, and `/interact`, with lighter coverage for `/crawl` and `/map`.
 
