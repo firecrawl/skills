@@ -37,7 +37,9 @@ Use this when the product knows the site but not the exact URLs.
 - If you already have the exact URL, use [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
 - If the feature begins with a general query across the web, use [firecrawl-build-search](../firecrawl-build-search/SKILL.md).
 
-## Docs
+## Docs (Source of Truth)
+
+Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
 
 - [docs.firecrawl.dev/features/map](https://docs.firecrawl.dev/features/map)
 

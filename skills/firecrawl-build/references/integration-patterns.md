@@ -1,5 +1,9 @@
 # Integration Patterns
 
+These patterns describe when to use each endpoint. For request/response
+schemas, parameters, and SDK examples, read the docs at
+https://docs.firecrawl.dev
+
 Firecrawl integrations usually fall into one of these shapes:
 
 ## Known URL -> extract content

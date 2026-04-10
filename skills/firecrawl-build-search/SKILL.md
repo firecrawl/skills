@@ -51,7 +51,9 @@ Use this when the application starts with a query, not a URL.
 - Be explicit about whether the product needs snippets, URLs, or full result content.
 - Keep the query contract stable so downstream scraping logic stays predictable.
 
-## Docs
+## Docs (Source of Truth)
+
+Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
 
 - [docs.firecrawl.dev/features/search](https://docs.firecrawl.dev/features/search)
 

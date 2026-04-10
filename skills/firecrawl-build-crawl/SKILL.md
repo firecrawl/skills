@@ -37,7 +37,9 @@ Use this when the product needs many pages from the same site, not just one.
 - If you only need one known URL, use [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
 - If you first need to discover URLs on a single site, start with [firecrawl-build-map](../firecrawl-build-map/SKILL.md).
 
-## Docs
+## Docs (Source of Truth)
+
+Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
 
 - [docs.firecrawl.dev/features/crawl](https://docs.firecrawl.dev/features/crawl)
 

@@ -50,7 +50,9 @@ Use this when `/scrape` is not enough because the feature needs to act on the pa
 - If the page can be read directly, stay on [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
 - If you need a site-wide or section-wide extraction job, use [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md) instead of driving one page at a time.
 
-## Docs
+## Docs (Source of Truth)
+
+Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
 
 - [docs.firecrawl.dev/features/interact](https://docs.firecrawl.dev/features/interact)
 

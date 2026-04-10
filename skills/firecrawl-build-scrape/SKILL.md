@@ -52,7 +52,9 @@ Use this when the application already has the URL and needs content from one pag
 - Treat `/scrape` as the default primitive for downstream LLM or indexing pipelines.
 - Request richer formats only when the consumer needs them, such as links, screenshots, or branding data.
 
-## Docs
+## Docs (Source of Truth)
+
+Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
 
 - [docs.firecrawl.dev/features/scrape](https://docs.firecrawl.dev/features/scrape)
 

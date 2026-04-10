@@ -26,7 +26,7 @@ Use direct HTTP calls when:
 
 After installation, run a smoke test from the real integration path. See [verification.md](verification.md).
 
-Canonical docs:
+Canonical docs (source of truth for all endpoint details):
 
 - [docs.firecrawl.dev/features/scrape](https://docs.firecrawl.dev/features/scrape)
 - [docs.firecrawl.dev/features/search](https://docs.firecrawl.dev/features/search)

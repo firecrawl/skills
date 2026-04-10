@@ -91,6 +91,13 @@ For the full checklist, see [references/project-intake.md](references/project-in
 | **Implement URL discovery**                          | [firecrawl-build-map](../firecrawl-build-map/SKILL.md)                   |
 | **Verify the integration actually works**            | [references/verification.md](references/verification.md)                 |
 
+## Docs Are the Source of Truth
+
+The Firecrawl documentation at https://docs.firecrawl.dev is the
+canonical reference for request/response schemas, parameters, SDK usage,
+and endpoint behavior. These skills describe when and why to use each
+endpoint. For how to call them, read the docs.
+
 ## Default Integration Order
 
 1. Get `FIRECRAWL_API_KEY` or `FIRECRAWL_API_URL` right.
@@ -98,8 +105,9 @@ For the full checklist, see [references/project-intake.md](references/project-in
 3. Ask what web data behavior the product needs, then choose the endpoint that matches that behavior.
 4. For existing projects, inspect the repo and match its conventions before coding.
 5. Install the SDK for the target stack, or call REST directly.
-6. Keep endpoint-specific implementation details in the narrower skills linked above.
-7. Run a smoke test that proves a real Firecrawl request succeeds.
+6. Read the docs for the chosen endpoint before writing integration code.
+7. Keep endpoint-specific implementation details in the narrower skills linked above.
+8. Run a smoke test that proves a real Firecrawl request succeeds.
 
 ## Boundary With The CLI
 
