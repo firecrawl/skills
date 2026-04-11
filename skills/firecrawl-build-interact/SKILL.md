@@ -48,13 +48,17 @@ Use this when `/scrape` is not enough because the feature needs to act on the pa
 ## Escalation Rules
 
 - If the page can be read directly, stay on [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
-- If you need a site-wide or section-wide extraction job, use [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md) instead of driving one page at a time.
 
 ## Docs (Source of Truth)
 
-Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
+Read the source-of-truth page for your project language before writing integration code:
 
-- [docs.firecrawl.dev/features/interact](https://docs.firecrawl.dev/features/interact)
+- **Node / TypeScript**: [docs.firecrawl.dev/agent-source-of-truth/node](https://docs.firecrawl.dev/agent-source-of-truth/node)
+- **Python**: [docs.firecrawl.dev/agent-source-of-truth/python](https://docs.firecrawl.dev/agent-source-of-truth/python)
+- **Rust**: [docs.firecrawl.dev/agent-source-of-truth/rust](https://docs.firecrawl.dev/agent-source-of-truth/rust)
+- **Java**: [docs.firecrawl.dev/agent-source-of-truth/java](https://docs.firecrawl.dev/agent-source-of-truth/java)
+- **Elixir**: [docs.firecrawl.dev/agent-source-of-truth/elixir](https://docs.firecrawl.dev/agent-source-of-truth/elixir)
+- **cURL / REST**: [docs.firecrawl.dev/agent-source-of-truth/curl](https://docs.firecrawl.dev/agent-source-of-truth/curl)
 
 ## See Also
 

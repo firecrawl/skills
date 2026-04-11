@@ -28,7 +28,6 @@ Use this when the application already has the URL and needs content from one pag
 
 ## Default Recommendations
 
-- Start with `/scrape`, not `/crawl`.
 - Return `markdown` unless the feature truly needs another format.
 - Use `onlyMainContent` for article-like pages where nav and chrome add noise.
 - Add waits or other rendering options only when the page needs them.
@@ -44,7 +43,6 @@ Use this when the application already has the URL and needs content from one pag
 
 - If you do not have the URL yet, start with [firecrawl-build-search](../firecrawl-build-search/SKILL.md).
 - If content requires clicks, typing, or multi-step navigation, escalate to [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md).
-- If you need many pages from the same site, consider [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md) or [firecrawl-build-map](../firecrawl-build-map/SKILL.md).
 
 ## Implementation Notes
 
@@ -54,9 +52,14 @@ Use this when the application already has the URL and needs content from one pag
 
 ## Docs (Source of Truth)
 
-Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
+Read the source-of-truth page for your project language before writing integration code:
 
-- [docs.firecrawl.dev/features/scrape](https://docs.firecrawl.dev/features/scrape)
+- **Node / TypeScript**: [docs.firecrawl.dev/agent-source-of-truth/node](https://docs.firecrawl.dev/agent-source-of-truth/node)
+- **Python**: [docs.firecrawl.dev/agent-source-of-truth/python](https://docs.firecrawl.dev/agent-source-of-truth/python)
+- **Rust**: [docs.firecrawl.dev/agent-source-of-truth/rust](https://docs.firecrawl.dev/agent-source-of-truth/rust)
+- **Java**: [docs.firecrawl.dev/agent-source-of-truth/java](https://docs.firecrawl.dev/agent-source-of-truth/java)
+- **Elixir**: [docs.firecrawl.dev/agent-source-of-truth/elixir](https://docs.firecrawl.dev/agent-source-of-truth/elixir)
+- **cURL / REST**: [docs.firecrawl.dev/agent-source-of-truth/curl](https://docs.firecrawl.dev/agent-source-of-truth/curl)
 
 ## See Also
 

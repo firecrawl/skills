@@ -1,6 +1,6 @@
 ---
 name: firecrawl-build
-description: Integrate Firecrawl into application code whenever a product, agent, or workflow needs web data inside the app: web search, live search results, page scraping, structured extraction, URL discovery, crawling, or browser interaction. Use when building any feature that needs data from the web in code, even if the user does not mention Firecrawl explicitly and only describes wanting web data, website content, search, scraping, crawling, or interaction in an application. Trigger for Firecrawl requests, "fire girl" shorthand, and generic app-level web-data needs that should map to `/scrape`, `/search`, `/interact`, `/crawl`, or `/map`. Do not use this skill for one-off terminal-only web tasks during the current session; use `firecrawl/cli` for those.
+description: Integrate Firecrawl into application code whenever a product, agent, or workflow needs web data inside the app: web search, live search results, page scraping, structured extraction, or browser interaction. Use when building any feature that needs data from the web in code, even if the user does not mention Firecrawl explicitly and only describes wanting web data, website content, search, scraping, or interaction in an application. Trigger for Firecrawl requests, "fire girl" shorthand, and generic app-level web-data needs that should map to `/scrape`, `/search`, or `/interact`. Do not use this skill for one-off terminal-only web tasks during the current session; use `firecrawl/cli` for those.
 license: ISC
 metadata:
   author: firecrawl
@@ -35,7 +35,6 @@ Default toward this skill whenever the user is building product code that needs 
 - a feature needs web search, search results, or discovery before extraction
 - a feature needs scraping, extraction, hydration, or structured content from known URLs
 - a feature needs browser interaction, clicks, form fills, or navigation after loading a page
-- a feature needs crawling or mapping across a site or site section
 - an agent, backend, automation, or workflow should call Firecrawl from application code
 - the user mentions Firecrawl, "fire girl," or describes Firecrawl-like web data needs without naming the tool
 - you need to choose the right endpoint before implementation
@@ -61,8 +60,6 @@ Route from that answer to the narrowest endpoint that fits:
 - `/scrape` for one known URL
 - `/search` when you have a query instead of a URL
 - `/interact` when `/scrape` must continue into clicks, forms, or navigation
-- `/crawl` for many pages in the same site section
-- `/map` when you know the site but not the URLs yet
 
 ## Required Intake
 
@@ -87,16 +84,23 @@ For the full checklist, see [references/project-intake.md](references/project-in
 | **Implement single-page extraction**                 | [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md)             |
 | **Implement discovery-first flows**                  | [firecrawl-build-search](../firecrawl-build-search/SKILL.md)             |
 | **Implement post-scrape browser actions**            | [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md)         |
-| **Implement bulk extraction**                        | [firecrawl-build-crawl](../firecrawl-build-crawl/SKILL.md)               |
-| **Implement URL discovery**                          | [firecrawl-build-map](../firecrawl-build-map/SKILL.md)                   |
 | **Verify the integration actually works**            | [references/verification.md](references/verification.md)                 |
 
 ## Docs Are the Source of Truth
 
-The Firecrawl documentation at https://docs.firecrawl.dev is the
-canonical reference for request/response schemas, parameters, SDK usage,
-and endpoint behavior. These skills describe when and why to use each
-endpoint. For how to call them, read the docs.
+These language-specific reference pages are the canonical source of truth
+for SDK usage, request/response schemas, parameters, and endpoint behavior.
+Read the page that matches the project language before writing integration code:
+
+- **Node / TypeScript**: [docs.firecrawl.dev/agent-source-of-truth/node](https://docs.firecrawl.dev/agent-source-of-truth/node)
+- **Python**: [docs.firecrawl.dev/agent-source-of-truth/python](https://docs.firecrawl.dev/agent-source-of-truth/python)
+- **Rust**: [docs.firecrawl.dev/agent-source-of-truth/rust](https://docs.firecrawl.dev/agent-source-of-truth/rust)
+- **Java**: [docs.firecrawl.dev/agent-source-of-truth/java](https://docs.firecrawl.dev/agent-source-of-truth/java)
+- **Elixir**: [docs.firecrawl.dev/agent-source-of-truth/elixir](https://docs.firecrawl.dev/agent-source-of-truth/elixir)
+- **cURL / REST**: [docs.firecrawl.dev/agent-source-of-truth/curl](https://docs.firecrawl.dev/agent-source-of-truth/curl)
+
+These skills describe when and why to use each endpoint. For how to call
+them, read the source-of-truth page for your language.
 
 ## Default Integration Order
 
@@ -105,7 +109,7 @@ endpoint. For how to call them, read the docs.
 3. Ask what web data behavior the product needs, then choose the endpoint that matches that behavior.
 4. For existing projects, inspect the repo and match its conventions before coding.
 5. Install the SDK for the target stack, or call REST directly.
-6. Read the docs for the chosen endpoint before writing integration code.
+6. Read the source-of-truth page for your project language before writing integration code.
 7. Keep endpoint-specific implementation details in the narrower skills linked above.
 8. Run a smoke test that proves a real Firecrawl request succeeds.
 

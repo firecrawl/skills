@@ -1,8 +1,8 @@
 # Integration Patterns
 
 These patterns describe when to use each endpoint. For request/response
-schemas, parameters, and SDK examples, read the docs at
-https://docs.firecrawl.dev
+schemas, parameters, and SDK examples, read the source-of-truth page for
+your project language at https://docs.firecrawl.dev/agent-source-of-truth/
 
 Firecrawl integrations usually fall into one of these shapes:
 
@@ -37,21 +37,3 @@ Examples:
 - paginated listings
 - authenticated dashboards
 
-## Site -> discover URLs -> extract subset
-
-Use `/map` when the site is known but target URLs are not.
-
-Examples:
-
-- finding the auth page in a docs site
-- identifying blog post URLs before enrichment
-
-## Site section -> bulk extraction
-
-Use `/crawl` when the product needs many pages in one run.
-
-Examples:
-
-- help center ingestion
-- docs sync jobs
-- blog archive imports

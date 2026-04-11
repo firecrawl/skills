@@ -8,8 +8,6 @@ Use the smallest request that proves auth, networking, and SDK wiring work:
 
 - `/scrape` -> request one known URL
 - `/search` -> run one small query with a limit of 1
-- `/map` -> map one known domain with a narrow target
-- `/crawl` -> crawl a tiny site section or set a very low limit
 - `/interact` -> start from `/scrape`, then run one minimal browser action
 
 ## Existing Project Smoke Test

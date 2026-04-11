@@ -37,7 +37,5 @@ Route from that answer:
 - known URL -> `/scrape`
 - query first -> `/search`
 - clicks, forms, login, or navigation after scrape -> `/interact`
-- many related pages in one site section -> `/crawl`
-- known site but unknown URLs -> `/map`
 
 Then install the SDK or use REST in the place that matches existing project conventions, not wherever is easiest in the moment.

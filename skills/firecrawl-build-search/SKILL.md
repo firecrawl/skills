@@ -43,7 +43,6 @@ Use this when the application starts with a query, not a URL.
 
 - If you already have the URL, use [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md).
 - If the result page then requires clicks or form interaction, escalate to [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md).
-- If the search target is a known site and you only need URLs on that site, [firecrawl-build-map](../firecrawl-build-map/SKILL.md) may be a better fit.
 
 ## Implementation Notes
 
@@ -53,12 +52,17 @@ Use this when the application starts with a query, not a URL.
 
 ## Docs (Source of Truth)
 
-Read the docs for request/response schemas, parameters, and SDK examples before writing integration code:
+Read the source-of-truth page for your project language before writing integration code:
 
-- [docs.firecrawl.dev/features/search](https://docs.firecrawl.dev/features/search)
+- **Node / TypeScript**: [docs.firecrawl.dev/agent-source-of-truth/node](https://docs.firecrawl.dev/agent-source-of-truth/node)
+- **Python**: [docs.firecrawl.dev/agent-source-of-truth/python](https://docs.firecrawl.dev/agent-source-of-truth/python)
+- **Rust**: [docs.firecrawl.dev/agent-source-of-truth/rust](https://docs.firecrawl.dev/agent-source-of-truth/rust)
+- **Java**: [docs.firecrawl.dev/agent-source-of-truth/java](https://docs.firecrawl.dev/agent-source-of-truth/java)
+- **Elixir**: [docs.firecrawl.dev/agent-source-of-truth/elixir](https://docs.firecrawl.dev/agent-source-of-truth/elixir)
+- **cURL / REST**: [docs.firecrawl.dev/agent-source-of-truth/curl](https://docs.firecrawl.dev/agent-source-of-truth/curl)
 
 ## See Also
 
 - [firecrawl-build](../firecrawl-build/SKILL.md)
 - [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md)
-- [firecrawl-build-map](../firecrawl-build-map/SKILL.md)
+- [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md)

@@ -77,6 +77,17 @@ Then decide which integration path applies:
 | **Start implementation from a known URL** | [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md) |
 | **Start implementation from a query** | [firecrawl-build-search](../firecrawl-build-search/SKILL.md) |
 
+## Docs (Source of Truth)
+
+Read the source-of-truth page for your project language for SDK usage, schemas, and examples:
+
+- **Node / TypeScript**: [docs.firecrawl.dev/agent-source-of-truth/node](https://docs.firecrawl.dev/agent-source-of-truth/node)
+- **Python**: [docs.firecrawl.dev/agent-source-of-truth/python](https://docs.firecrawl.dev/agent-source-of-truth/python)
+- **Rust**: [docs.firecrawl.dev/agent-source-of-truth/rust](https://docs.firecrawl.dev/agent-source-of-truth/rust)
+- **Java**: [docs.firecrawl.dev/agent-source-of-truth/java](https://docs.firecrawl.dev/agent-source-of-truth/java)
+- **Elixir**: [docs.firecrawl.dev/agent-source-of-truth/elixir](https://docs.firecrawl.dev/agent-source-of-truth/elixir)
+- **cURL / REST**: [docs.firecrawl.dev/agent-source-of-truth/curl](https://docs.firecrawl.dev/agent-source-of-truth/curl)
+
 ## After Setup
 
 Once the key is present:
@@ -84,7 +95,8 @@ Once the key is present:
 1. decide whether this is a fresh project or an existing codebase
 2. ask what Firecrawl should do in the product
 3. pick the narrowest endpoint that matches that behavior
-4. add the SDK or REST call in code
-5. run a smoke test that proves one real Firecrawl request succeeds
-6. use the endpoint-specific skills in this repo for implementation guidance
-7. if you also need live web tooling during the current task, the CLI skills are already installed — use `firecrawl/cli`
+4. read the source-of-truth page for the project language before writing code
+5. add the SDK or REST call in code
+6. run a smoke test that proves one real Firecrawl request succeeds
+7. use the endpoint-specific skills in this repo for implementation guidance
+8. if you also need live web tooling during the current task, the CLI skills are already installed — use `firecrawl/cli`

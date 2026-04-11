@@ -26,10 +26,11 @@ Use direct HTTP calls when:
 
 After installation, run a smoke test from the real integration path. See [verification.md](verification.md).
 
-Canonical docs (source of truth for all endpoint details):
+Source of truth for SDK usage, schemas, and endpoint details (read the page matching your language):
 
-- [docs.firecrawl.dev/features/scrape](https://docs.firecrawl.dev/features/scrape)
-- [docs.firecrawl.dev/features/search](https://docs.firecrawl.dev/features/search)
-- [docs.firecrawl.dev/features/interact](https://docs.firecrawl.dev/features/interact)
-- [docs.firecrawl.dev/features/crawl](https://docs.firecrawl.dev/features/crawl)
-- [docs.firecrawl.dev/features/map](https://docs.firecrawl.dev/features/map)
+- **Node / TypeScript**: [docs.firecrawl.dev/agent-source-of-truth/node](https://docs.firecrawl.dev/agent-source-of-truth/node)
+- **Python**: [docs.firecrawl.dev/agent-source-of-truth/python](https://docs.firecrawl.dev/agent-source-of-truth/python)
+- **Rust**: [docs.firecrawl.dev/agent-source-of-truth/rust](https://docs.firecrawl.dev/agent-source-of-truth/rust)
+- **Java**: [docs.firecrawl.dev/agent-source-of-truth/java](https://docs.firecrawl.dev/agent-source-of-truth/java)
+- **Elixir**: [docs.firecrawl.dev/agent-source-of-truth/elixir](https://docs.firecrawl.dev/agent-source-of-truth/elixir)
+- **cURL / REST**: [docs.firecrawl.dev/agent-source-of-truth/curl](https://docs.firecrawl.dev/agent-source-of-truth/curl)

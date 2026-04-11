@@ -30,10 +30,6 @@ npx skills add firecrawl/skills
 | [`firecrawl-build-scrape`](./skills/firecrawl-build-scrape)         | Integrate `/scrape` for single-page extraction                          | Authored here |
 | [`firecrawl-build-search`](./skills/firecrawl-build-search)         | Integrate `/search` for discovery-first workflows                       | Authored here |
 | [`firecrawl-build-interact`](./skills/firecrawl-build-interact)     | Integrate `/interact` for clicks, forms, and dynamic flows after scrape | Authored here |
-| [`firecrawl-build-crawl`](./skills/firecrawl-build-crawl)           | Integrate `/crawl` for bulk extraction across a site or section         | Authored here |
-| [`firecrawl-build-map`](./skills/firecrawl-build-map)               | Integrate `/map` for URL discovery on a known site                      | Authored here |
-
-The current emphasis is on `/scrape`, `/search`, and `/interact`, with lighter coverage for `/crawl` and `/map`.
 
 ## MCP Server
 
@@ -90,7 +86,7 @@ Default build flow:
 
 1. decide whether the project is fresh or existing
 2. ask what Firecrawl should do in the product
-3. route to `/scrape`, `/search`, `/interact`, `/crawl`, or `/map`
+3. route to `/scrape`, `/search`, or `/interact`
 4. integrate using the project's existing conventions
 5. verify one real Firecrawl request succeeds
 
@@ -105,13 +101,16 @@ The onboarding source lives at:
 
 - [`firecrawl-web/public/agent-onboarding/SKILL.md`](https://www.firecrawl.dev/agent-onboarding/SKILL.md)
 
-## Docs
+## Docs (Source of Truth)
 
-- `/scrape`: [docs.firecrawl.dev/features/scrape](https://docs.firecrawl.dev/features/scrape)
-- `/search`: [docs.firecrawl.dev/features/search](https://docs.firecrawl.dev/features/search)
-- `/interact`: [docs.firecrawl.dev/features/interact](https://docs.firecrawl.dev/features/interact)
-- `/crawl`: [docs.firecrawl.dev/features/crawl](https://docs.firecrawl.dev/features/crawl)
-- `/map`: [docs.firecrawl.dev/features/map](https://docs.firecrawl.dev/features/map)
+Read the source-of-truth page for your project language:
+
+- **Node / TypeScript**: [docs.firecrawl.dev/agent-source-of-truth/node](https://docs.firecrawl.dev/agent-source-of-truth/node)
+- **Python**: [docs.firecrawl.dev/agent-source-of-truth/python](https://docs.firecrawl.dev/agent-source-of-truth/python)
+- **Rust**: [docs.firecrawl.dev/agent-source-of-truth/rust](https://docs.firecrawl.dev/agent-source-of-truth/rust)
+- **Java**: [docs.firecrawl.dev/agent-source-of-truth/java](https://docs.firecrawl.dev/agent-source-of-truth/java)
+- **Elixir**: [docs.firecrawl.dev/agent-source-of-truth/elixir](https://docs.firecrawl.dev/agent-source-of-truth/elixir)
+- **cURL / REST**: [docs.firecrawl.dev/agent-source-of-truth/curl](https://docs.firecrawl.dev/agent-source-of-truth/curl)
 
 ## Scope Boundaries
 

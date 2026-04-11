@@ -11,8 +11,6 @@ All current skills in this repo are authored here:
 - `skills/firecrawl-build-scrape/`
 - `skills/firecrawl-build-search/`
 - `skills/firecrawl-build-interact/`
-- `skills/firecrawl-build-crawl/`
-- `skills/firecrawl-build-map/`
 
 Plugin metadata and top-level docs are also safe to edit:
 
@@ -29,7 +27,7 @@ Plugin metadata and top-level docs are also safe to edit:
 Prefer these skills when the task is:
 
 - adding Firecrawl to a codebase
-- choosing between `/scrape`, `/search`, `/interact`, `/crawl`, and `/map`
+- choosing between `/scrape`, `/search`, and `/interact`
 - getting `FIRECRAWL_API_KEY` into `.env`
 - selecting SDKs or REST patterns for product code
 
@@ -46,7 +44,7 @@ build skills by the same `firecrawl init` command.
 
 - Keep each `SKILL.md` concise and trigger-oriented.
 - Lead with "use this when..." guidance.
-- Favor endpoint names in slash notation: `/scrape`, `/search`, `/interact`, `/crawl`, `/map`.
+- Favor endpoint names in slash notation: `/scrape`, `/search`, `/interact`.
 - Keep CLI references short and defer to `firecrawl/cli` instead of duplicating command manuals.
 - Treat [`https://www.firecrawl.dev/agent-onboarding/SKILL.md`](https://www.firecrawl.dev/agent-onboarding/SKILL.md) as the canonical source for the two-path framing.
 
@@ -57,8 +55,6 @@ Current priority order:
 1. `/scrape`
 2. `/search`
 3. `/interact`
-4. `/crawl`
-5. `/map`
 
 ## Repo Shape
 
