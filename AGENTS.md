@@ -38,9 +38,9 @@ Do not use this repo as the primary source for:
 - one-off web research
 - ad hoc scraping during the current coding session
 - terminal command reference
-- CLI installation or MCP setup beyond a brief pointer
 
-Those workflows belong to `firecrawl/cli`.
+Those workflows use the CLI skills, which are installed alongside these
+build skills by the same `firecrawl init` command.
 
 ## Authoring Rules
 

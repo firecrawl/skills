@@ -111,10 +111,12 @@ endpoint. For how to call them, read the docs.
 
 ## Boundary With The CLI
 
-Use this repo for application integration.
+Both this repo and the CLI skills are installed by the same command:
 
-Use `firecrawl/cli` for:
+```bash
+npx -y firecrawl-cli@latest init --all --browser
+```
 
-- one-off research during the current task
-- terminal workflows and command syntax
-- editor setup for live web tooling
+Use these build skills for application integration. Use `firecrawl/cli`
+for live web work during the current session (one-off research, terminal
+workflows, editor setup). Both are available after install.

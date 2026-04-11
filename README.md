@@ -9,11 +9,17 @@ This repo is the app-integration counterpart to [`firecrawl/cli`](https://github
 
 ## Install
 
+One command installs both the CLI skills and these build skills:
+
+```bash
+npx -y firecrawl-cli@latest init --all --browser
+```
+
+Or install just this repo's skills directly:
+
 ```bash
 npx skills add firecrawl/skills
 ```
-
-Then select the skills you want to install.
 
 ## Available Skills
 
@@ -58,21 +64,18 @@ If you do not already have an API key, use [`firecrawl-build-onboarding`](./skil
 
 ## Relationship To The CLI Repo
 
-Firecrawl has two distinct agent workflows:
-
-1. Agent needs better web tools while doing work.
-
-Install and use the CLI:
+Both repos are installed by the same command:
 
 ```bash
 npx -y firecrawl-cli@latest init --all --browser
 ```
 
-That path installs terminal commands and CLI-native skills for ad hoc web tasks.
+This installs the Firecrawl CLI, the CLI skills (for live web work), and these build skills (for app integration) together. The difference is what you use after install:
 
-2. Agent is building an app that should call Firecrawl.
+- **CLI skills** (`firecrawl/cli`) — for searching the web, scraping pages, interacting with live sites during the current session
+- **Build skills** (this repo) — for integrating Firecrawl into application code
 
-Use this repo. The skills here focus on:
+The build skills here focus on:
 
 - getting an API key into `.env`
 - choosing fresh project vs existing project flow
@@ -93,10 +96,10 @@ Default build flow:
 
 ## Source Of Truth
 
-This repo intentionally follows the same split described in Firecrawl's onboarding skill:
+This repo follows the same two usage paths described in Firecrawl's onboarding skill (same install, different use cases):
 
-- Path A: supercharge the agent's own web tooling with the CLI
-- Path B: integrate Firecrawl into an application
+- Path A: live web tools during the current session (CLI skills)
+- Path B: integrate Firecrawl into application code (build skills)
 
 The onboarding source lives at:
 
@@ -116,10 +119,10 @@ This repo does not try to duplicate:
 
 - full CLI command references
 - terminal flags and output handling rules
-- editor setup flows that already belong to `firecrawl/cli`
+- editor setup flows
 
-If a task is "search the web for me right now" or "scrape this URL during the session", point agents to `firecrawl/cli`.
-If a task is "add Firecrawl to this codebase", point agents to this repo.
+If a task is "search the web for me right now" or "scrape this URL during the session", use the CLI skills (already installed alongside these build skills).
+If a task is "add Firecrawl to this codebase", use the build skills in this repo.
 
 ## License
 

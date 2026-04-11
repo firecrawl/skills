@@ -1,6 +1,6 @@
 ---
 name: firecrawl-build-onboarding
-description: Get Firecrawl credentials and SDK setup into a project. Use when an application needs `FIRECRAWL_API_KEY`, when an agent should add Firecrawl to `.env`, when the user wants to authenticate Firecrawl for app code, or when choosing the first SDK and docs for a new Firecrawl integration. If the task is live web work during the current session, hand off to `firecrawl/cli` instead. This skill includes its own browser auth flow, so it does not depend on the website onboarding skill.
+description: Get Firecrawl credentials and SDK setup into a project. Use when an application needs `FIRECRAWL_API_KEY`, when an agent should add Firecrawl to `.env`, when the user wants to authenticate Firecrawl for app code, or when choosing the first SDK and docs for a new Firecrawl integration. This skill includes its own browser auth flow, so it does not depend on the website onboarding skill.
 license: ISC
 metadata:
   author: firecrawl
@@ -24,6 +24,19 @@ references:
 
 Use this skill for the application-integration path from Firecrawl's onboarding flow.
 
+## Install
+
+If you haven't installed yet, one command sets up both the CLI tools
+(for live web work) and the build skills (for app integration):
+
+```bash
+npx -y firecrawl-cli@latest init --all --browser
+```
+
+This installs the Firecrawl CLI, the CLI skills, and these build skills
+together. It also opens browser auth so the human can sign in or create
+an account. No separate `npx skills add` step is needed.
+
 ## Use This When
 
 - a project needs `FIRECRAWL_API_KEY`
@@ -32,8 +45,6 @@ Use this skill for the application-integration path from Firecrawl's onboarding 
 - you need to choose the first SDK or REST path
 
 If the human still needs to sign up, sign in, or authorize access in the browser, use the auth flow reference in this skill.
-
-Do not use this skill for CLI install flows beyond a brief pointer. That belongs to `firecrawl/cli`.
 
 ## Quick Start
 
@@ -62,7 +73,7 @@ Then decide which integration path applies:
 | **Install the right SDK** | [references/sdk-installation.md](references/sdk-installation.md) |
 | **Put credentials into `.env` or project config** | [references/project-setup.md](references/project-setup.md) |
 | **Choose the right endpoint after setup** | [firecrawl-build](../firecrawl-build/SKILL.md) |
-| **Need live web tooling during this task instead** | `firecrawl/cli` |
+| **Need live web tooling during this task** | The CLI skills are already installed from the same command |
 | **Start implementation from a known URL** | [firecrawl-build-scrape](../firecrawl-build-scrape/SKILL.md) |
 | **Start implementation from a query** | [firecrawl-build-search](../firecrawl-build-search/SKILL.md) |
 
@@ -76,4 +87,4 @@ Once the key is present:
 4. add the SDK or REST call in code
 5. run a smoke test that proves one real Firecrawl request succeeds
 6. use the endpoint-specific skills in this repo for implementation guidance
-7. if you also need live web tooling during the current task, use `firecrawl/cli` alongside this repo
+7. if you also need live web tooling during the current task, the CLI skills are already installed — use `firecrawl/cli`
