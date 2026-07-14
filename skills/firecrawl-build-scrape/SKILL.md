@@ -44,6 +44,15 @@ Use this when the application already has the URL and needs content from one pag
 - If you do not have the URL yet, start with [firecrawl-build-search](../firecrawl-build-search/SKILL.md).
 - If content requires clicks, typing, or multi-step navigation, escalate to [firecrawl-build-interact](../firecrawl-build-interact/SKILL.md).
 
+
+## Freshness, Cache Provenance, and Liveness
+
+- Use `maxAge` intentionally. The default may allow recent cached data; set `maxAge: 0` when the product is about to take a freshness-sensitive action.
+- If a response includes `metadata.cache`, it means Firecrawl can attest that the document came from its own index cache. The object includes `source: "firecrawl-index"` and `cachedAt`.
+- If `metadata.cache` is absent, do not infer miss, fresh scrape, bypass, or source-page liveness. It only means cache provenance was not attested.
+- For stateful records such as job postings, event pages, inventory, pricing, or application flows, add a product-level liveness gate immediately before downstream action. Prefer the source API/ATS when available; otherwise verify page content such as active apply buttons, closed labels, canonical IDs, and redirects.
+- Do not rely on HTTP 200, rendered HTML, `metadata.cache`, or legacy `metadata.cacheState` alone to decide that a job posting or other business object is still live.
+
 ## Implementation Notes
 
 - Keep the integration narrow: one feature, one URL, one extraction contract.
