@@ -32,6 +32,16 @@ Use this when the application already has the URL and needs content from one pag
 - Use `onlyMainContent` for article-like pages where nav and chrome add noise.
 - Add waits or other rendering options only when the page needs them.
 
+## Freshness and Liveness
+
+- A successful scrape tells you what the page returned; it does not prove that
+  the item it describes (a job posting, a listing) is still active.
+- Firecrawl caches indexed content by default to cut latency. For
+  freshness-sensitive final retrievals, request with `maxAge: 0` to bypass index
+  reuse, and do not treat HTTP 200 or non-empty content as proof of liveness.
+- See [references/freshness-and-liveness.md](references/freshness-and-liveness.md)
+  for the tradeoff, the checklist, and a worked example.
+
 ## Common Product Patterns
 
 - knowledge ingestion from known URLs
