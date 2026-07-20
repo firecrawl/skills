@@ -35,7 +35,7 @@ Use this when the application already has the URL and needs content from one pag
 ## Freshness and Liveness
 
 - A successful scrape tells you what the page returned; it does not prove that
-  the item it describes (a job posting, a listing) is still active.
+  the state represented by the page is current.
 - Firecrawl caches indexed content by default to cut latency. For
   freshness-sensitive final retrievals, request with `maxAge: 0` to bypass index
   reuse, and do not treat HTTP 200 or non-empty content as proof of liveness.
