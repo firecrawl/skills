@@ -9,8 +9,8 @@ metadata:
   source: https://github.com/firecrawl/skills
 inputs:
   - name: FIRECRAWL_API_KEY
-    description: Firecrawl API key for hosted Firecrawl requests.
-    required: true
+    description: Firecrawl API key for hosted Firecrawl requests. Required for `/interact` and other authenticated endpoints; not available in keyless mode.
+    required: false
   - name: FIRECRAWL_API_URL
     description: Optional base URL for self-hosted Firecrawl deployments.
     required: false
