@@ -1,84 +1,51 @@
 # Freshness and Liveness
 
-A successful scrape tells you what the page returned. It does not prove that the
-state represented by the page is current. Keep these two questions separate:
+Two separate questions. Keep them separate in code:
 
-- **Freshness** -> is this content recent, or a cached copy? Controlled by `maxAge`.
-- **Liveness** -> is the underlying thing still real and active? Not something a
-  scrape can assert on its own.
+- **Freshness** — how old is this content? Controlled by `maxAge`.
+- **Liveness** — is the thing the page describes still active? A source-specific
+  judgment your application makes from the content.
 
-## The Caching / Freshness Tradeoff (`maxAge`)
+## `maxAge` and the Cache Tradeoff
 
-Firecrawl reuses recently indexed content to cut latency and cost. `maxAge` is
-the maximum age, in milliseconds, of an indexed copy that `/scrape` may return
-instead of running the normal scrape path.
+Firecrawl reuses recently indexed content, which is what makes repeat reads of
+the same URL fast and cheap. `maxAge` is the maximum age, in milliseconds, of an
+indexed copy that `/scrape` may return.
 
-- Omitting `maxAge` lets Firecrawl reuse a recent indexed copy. The common
-  default window is 2 days, and Firecrawl may tune it for a domain.
-- `maxAge: 0` disables index reuse and sends the request through the scrape
-  path. It trades latency and reliability for a fresher retrieval.
+- Omit `maxAge` and Firecrawl chooses the window itself, tuning it per domain.
+  This is the right default for most reads.
+- Set `maxAge` explicitly when the feature has a real staleness bound.
+- `maxAge: 0` skips index reuse and takes the live scrape path. It costs
+  latency, and it surfaces live-site failures that a reused copy would have
+  masked, so spend it on reads where staleness would cause a wrong or costly
+  decision.
 
-Keep caching on by default. Pay the `maxAge: 0` latency cost only for the reads
-where staleness would cause a wrong or costly decision.
+`/parse` is always uncached: it ignores a client `maxAge` and does not store its
+result, so there is no freshness knob to set there.
 
-## Freshness-Sensitive Action Checklist
+## Verifying What You Got
 
-Before an action that depends on current state, treat scrape output as evidence,
-not proof:
+From `/scrape` response metadata:
 
-1. Use `maxAge: 0` for the final retrieval to bypass Firecrawl index reuse.
-2. Do not treat HTTP 200 or non-empty content as proof of liveness.
-3. Inspect rendered content and redirect evidence. `metadata.sourceURL` is the
-   requested URL. When the engine-reported `metadata.url` differs, it can
-   indicate a redirect to a different resource. Matching values do not prove no
-   redirect occurred.
-4. Use source-specific APIs or identifiers where available (they often expose an
-   explicit status that a rendered page hides).
-5. Treat inconclusive evidence as **unknown**, and stop before the expensive or
-   irreversible step, rather than assuming active.
+- `cacheState` — `"hit"` or `"miss"`, present only when index reuse was
+  eligible. With `maxAge: 0` the field is absent, which is itself the
+  confirmation that no indexed copy was used.
+- `cachedAt` — ISO timestamp of the reused copy, present on a `"hit"`.
+- `sourceURL` — the URL you requested.
+- `url` — the URL the response came from. Differing values mean the request was
+  redirected. Equal values are not proof that no redirect occurred, because
+  `url` falls back to the requested URL when the engine reports none.
+- `statusCode` — the HTTP status of the response.
 
-## Worked Example: Collect Current Page Evidence
+## Deciding Liveness
 
-Neither the status code nor the presence of content settles whether a page's
-domain-specific state is current. Bypass index reuse, then collect the rendered
-content and response metadata for your application's own validation rules.
+Firecrawl supplies page evidence; your application interprets it in its own
+terms. `200` plus non-empty content means the fetch succeeded, not that the item
+described by the page is still active — plenty of sites serve a full page for a
+removed record.
 
-```js
-import Firecrawl from "@mendable/firecrawl-js";
-
-const firecrawl = new Firecrawl({ apiKey: process.env.FIRECRAWL_API_KEY });
-
-async function collectCurrentPageEvidence(url) {
-  // maxAge: 0 bypasses Firecrawl index reuse.
-  const doc = await firecrawl.scrape(url, {
-    formats: ["markdown"],
-    maxAge: 0,
-  });
-
-  const requestedURL = doc.metadata?.sourceURL ?? url;
-  const responseURL = doc.metadata?.url;
-
-  return {
-    markdown: doc.markdown ?? "",
-    statusCode: doc.metadata?.statusCode,
-    requestedURL,
-    responseURL,
-    possibleRedirect: Boolean(responseURL && responseURL !== requestedURL),
-  };
-}
-
-const evidence = await collectCurrentPageEvidence("https://example.com/resource");
-// Apply source-specific content, status, API, or identifier checks here.
-// If they are inconclusive, keep the state unknown.
-```
-
-The important boundary is after collection: Firecrawl supplies page evidence;
-your application interprets that evidence using source-specific rules. If those
-rules are inconclusive, keep the state `unknown`.
-
-## What Firecrawl Does Not Claim
-
-- HTTP 200 plus content does not prove that the item described by the page is
-  still active.
-- Firecrawl does not decide whether every kind of item is active. Your
-  application makes that decision from the evidence above, in its own terms.
+- Read the rendered content for the source's own signals.
+- Prefer a source-specific API or identifier where one exists. Those usually
+  state a status that the rendered page only implies.
+- When the evidence is inconclusive, keep the state `unknown` and stop before an
+  expensive or irreversible step rather than assuming active.
