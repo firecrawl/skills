@@ -11,11 +11,5 @@
   "repository": "https://github.com/firecrawl/skills",
   "license": "ISC",
   "keywords": ["firecrawl", "web-scraping", "search", "interact", "mcp"],
-  "skills": [
-    "./skills/firecrawl-build",
-    "./skills/firecrawl-build-onboarding",
-    "./skills/firecrawl-build-scrape",
-    "./skills/firecrawl-build-search",
-    "./skills/firecrawl-build-interact"
-  ]
+  "skills": "./skills/"
 }
