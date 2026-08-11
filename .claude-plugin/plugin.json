@@ -16,6 +16,8 @@
     "./skills/firecrawl-build-onboarding",
     "./skills/firecrawl-build-scrape",
     "./skills/firecrawl-build-search",
-    "./skills/firecrawl-build-interact"
+    "./skills/firecrawl-build-interact",
+    "./skills/firecrawl-research-index",
+    "./skills/firecrawl-developer-index"
   ]
 }

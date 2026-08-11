@@ -1,11 +1,15 @@
 ---
 name: firecrawl-research-index
-description: Find the papers that answer a research query with Firecrawl Research, using semantic search, semantic and structural expansion, and in-body verification. Always use this skill for any literature-finding / paper-retrieval task — single-paper lookups or full multi-paper sets.
+description: Find the papers that answer a research query in Firecrawl's research paper index — a corpus of paper abstracts whose largest share is biomedical and life-science literature (PubMed, bioRxiv, medRxiv), alongside arXiv preprints in CS, physics, and math — using semantic search, semantic and structural expansion, and in-body verification. Use this skill for literature-finding and paper-retrieval tasks of any kind, including clinical, biomedical, drug, gene, disease, and other life-science questions, whether the answer is a single paper or a full multi-paper set. The index is reached only through the `firecrawl_research_*` MCP tools or the `firecrawl research` CLI subcommands. Calling `firecrawl_search` with its `categories` option set to `["research"]` is a different feature — a filter over a short list of research-related websites — and does not query this index.
 ---
 
 # Firecrawl Research Index
 
 Find the research papers that answer a research query. Some questions have a single answer; many have several — and when in doubt, lean toward returning the fuller relevant set (most relevant first) rather than narrowing to one. A reader is better served seeing the neighboring methods and papers than having them silently dropped.
+
+## What is in the index
+
+Paper abstracts, with full text reachable per paper. The largest share of the corpus is **biomedical and life-science** literature — **PubMed** journal articles plus **bioRxiv** and **medRxiv** preprints — so clinical, drug, gene, disease, epidemiology, and public-health questions are in scope. **arXiv** preprints cover computer science, physics, and mathematics. Coverage outside those sources is thinner: a paper that exists only behind a publisher paywall or in a niche venue may not be indexed, and the general web tools below are the fallback when it isn't.
 
 There is **no fixed recipe**. Read the query, decide what kind it is, and choose the approach below. Some queries need a single search; others need heavy sturctural/semantic expansion. Don't run machinery a query doesn't call for.
 
@@ -33,6 +37,12 @@ There is **no fixed recipe**. Read the query, decide what kind it is, and choose
   In-body passages of **one** paper, to verify a load-bearing constraint (a method actually used, a score actually reported, an affiliation, what a paper compares to).
   Use it to settle a specific doubt, not on everything.
 
+- MCP: **`firecrawl_search(query, categories: ["research"])`**
+  CLI: **`firecrawl search <query> --categories research`**
+  **Not this index.** This is a *website* filter: it restricts a normal web search to a short list of research-related domains and returns page results in a `research` group beside `web`, each with `url`, `title`, `description` (the matched passage), `position`, and `category: "research"` — web results carry no `category`, so that is the field to key on when merging.
+  It returns web pages, not paper records, and it has none of the paper tools' expansion, canonical metadata, or in-body reading. It does not reach PubMed, bioRxiv, medRxiv, or the arXiv abstracts above.
+  Use it when you are **already** running a web search and want those sites weighed in the same call. For anything that is actually a paper-finding task, use `firecrawl_research_search_papers` and its siblings above.
+
 - MCP: **`firecrawl_search(query)` / `firecrawl_scrape(url)`**
   CLI: **`firecrawl search <query>` / `firecrawl scrape <url>`**
   General **web** search and page fetch, for facts that don't live in paper abstracts: benchmark **leaderboards**, rankings, "who scores best / is largest / is most used."
@@ -51,6 +61,8 @@ There is **no fixed recipe**. Read the query, decide what kind it is, and choose
 
 ## Principles
 
+- **Two different features share the word "research."** The paper index is `firecrawl_research_*` / `firecrawl research`. The `categories: ["research"]` option on `firecrawl_search` is a website filter and returns web pages. If a task is about finding papers, the tools in this skill are the ones that read the corpus; reaching for `categories: ["research"]` will quietly answer a different question.
+- **Query shape and subject field are separate.** A clinical-trial question and a machine-learning question take the same shapes above; what differs is only which source the hits come from. Don't send a biomedical or life-science query to the open web on the assumption the corpus is arXiv-only — PubMed, bioRxiv, and medRxiv are the largest part of what `search_papers` reads.
 - **When in doubt, include.** For any topic / method / comparison question, return the relevant *family*, not just the single best match — err toward keeping a plausibly-relevant paper rather than dropping it. The neighboring methods are part of a good answer; don't reason close work out just because one paper is the most exact match.
 - **Follow the literature, and keep what you find.** The seminal source, the competing methods, the close neighbors are usually a hop away — use `related_papers`, and *include* them, not just the first hit. Stopping at one good result is the most common way to leave the reader with half an answer.
 - **Verify to exclude, not to gatekeep.** Use `read_paper` to rule a paper *out* when a hard constraint clearly fails (wrong org/author, doesn't actually report the score). When a paper is plausibly relevant, lean toward keeping it rather than demanding proof.
