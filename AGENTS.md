@@ -30,7 +30,7 @@ Prefer these skills when the task is:
 
 - adding Firecrawl to a codebase
 - choosing between `/scrape`, `/search`, and `/interact`
-- choosing between `/search` and the research paper index or the developer index, which `/search` does not reach
+- choosing between `/search` and the research paper index or the developer index, which `/search` does not query
 - getting `FIRECRAWL_API_KEY` into `.env`
 - selecting SDKs or REST patterns for product code
 

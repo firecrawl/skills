@@ -61,7 +61,7 @@ Route from that answer to the narrowest endpoint that fits:
 - `/search` when you have a query instead of a URL
 - `/interact` when `/scrape` must continue into clicks, forms, or navigation
 
-Two indexes sit beside those endpoints and are not reached through `/search`:
+Two indexes sit beside those endpoints and are not queried by `/search`:
 
 - the **research paper index** when the query is for published papers — biomedical, clinical, and life-science literature or arXiv preprints — rather than web pages
 - the **developer index** when the answer belongs in an issue, pull request, README, or documentation page
