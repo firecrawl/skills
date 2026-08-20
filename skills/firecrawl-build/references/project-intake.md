@@ -10,7 +10,7 @@ Default flow:
 
 1. Confirm the target language or stack.
 2. Install the matching SDK, or use REST if that is a better fit.
-3. Add `FIRECRAWL_API_KEY` to `.env` or the runtime secret store.
+3. Configure `FIRECRAWL_API_KEY` in `.env` or the runtime secret store, **or** confirm keyless access is sufficient for the endpoints you need (see [auth-and-env.md](auth-and-env.md)).
 4. Create the smallest useful Firecrawl call for the product.
 5. Run the smoke test in [verification.md](verification.md).
 

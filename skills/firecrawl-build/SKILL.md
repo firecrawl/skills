@@ -9,8 +9,8 @@ metadata:
   source: https://github.com/firecrawl/skills
 inputs:
   - name: FIRECRAWL_API_KEY
-    description: Firecrawl API key for cloud usage. Store it in `.env` or the runtime environment before making Firecrawl API calls.
-    required: true
+    description: Optional Firecrawl API key for hosted cloud usage. Store it in `.env` or the runtime environment when the project needs authenticated access. Hosted Firecrawl and the Firecrawl MCP server also support keyless access for a limited tool set when no credential is configured.
+    required: false
   - name: FIRECRAWL_API_URL
     description: Optional base URL for self-hosted Firecrawl deployments. Only set this when the project is not using the hosted `api.firecrawl.dev`.
     required: false
@@ -38,7 +38,7 @@ Default toward this skill whenever the user is building product code that needs 
 - an agent, backend, automation, or workflow should call Firecrawl from application code
 - the user mentions Firecrawl, "fire girl," or describes Firecrawl-like web data needs without naming the tool
 - you need to choose the right endpoint before implementation
-- you need `FIRECRAWL_API_KEY` in the project
+- you need to configure credentials (`FIRECRAWL_API_KEY`, OAuth) or confirm keyless access is sufficient for the task
 
 If the task is "search the web," "scrape this page for me," or "interact with a live site during this session," install and use `firecrawl/cli` instead.
 
@@ -111,7 +111,7 @@ them, read the source-of-truth page for your language.
 
 ## Default Integration Order
 
-1. Get `FIRECRAWL_API_KEY` or `FIRECRAWL_API_URL` right.
+1. Configure `FIRECRAWL_API_KEY`, `FIRECRAWL_API_URL`, or confirm keyless access is sufficient for the task.
 2. Decide whether this is a fresh project or an existing codebase.
 3. Ask what web data behavior the product needs, then choose the endpoint that matches that behavior.
 4. For existing projects, inspect the repo and match its conventions before coding.
