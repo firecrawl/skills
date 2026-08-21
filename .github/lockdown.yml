@@ -4,7 +4,8 @@
 issues:
   comment: >
     This catalog is read-only — every skill is synced from its source repo.
-    Please open this issue against the source: CLI + index skills →
+    Please open this issue against the source: core skills (including the
+    research/developer index skills) →
     [firecrawl/cli](https://github.com/firecrawl/cli), build/SDK skills →
     [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) (`skills/`),
     workflow skills →
@@ -15,8 +16,9 @@ issues:
 pulls:
   comment: >
     This catalog is read-only and CI-synced; direct changes are overwritten on
-    the next sync. Please open this PR against the source repo: CLI + index
-    skills → [firecrawl/cli](https://github.com/firecrawl/cli), build/SDK
+    the next sync. Please open this PR against the source repo: core skills
+    (including the research/developer index skills) →
+    [firecrawl/cli](https://github.com/firecrawl/cli), build/SDK
     skills → [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl)
     (`skills/`), workflow skills →
     [firecrawl/firecrawl-workflows](https://github.com/firecrawl/firecrawl-workflows).
