@@ -1,6 +1,6 @@
 # Firecrawl Skills Catalog
 
-Read-only distribution catalog for all Firecrawl agent skills. **Every skill directory here is a CI-synced mirror — do not edit skills in this repo.**
+Read-only distribution catalog for all Firecrawl agent skills. **Every skill directory here is a CI-synced mirror. You must not edit skills in this repo.**
 
 ## Layout and sources
 

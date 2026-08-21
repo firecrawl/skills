@@ -24,15 +24,17 @@ npx -y firecrawl-cli@latest init
 
 ## Catalog layout
 
-| Category | Path | What it's for | Source of truth |
-|---|---|---|---|
-| Core | [`skills/core/`](./skills/core) | The Firecrawl primitives for live web work during an agent session (search, scrape, crawl, interact — via the CLI or MCP), plus the research paper index and developer index skills | [`firecrawl/cli`](https://github.com/firecrawl/cli/tree/main/skills) |
-| Build | [`skills/build/`](./skills/build) | Integrating Firecrawl APIs into product code: SDKs, REST, endpoint selection, API keys | [`firecrawl` monorepo `skills/`](https://github.com/firecrawl/firecrawl/tree/main/skills) |
-| Workflows | [`skills/workflows/`](./skills/workflows) | End-to-end session recipes: lead gen, deep research, SEO audit, knowledge bases, and more | [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows) |
+| Category  | Path                                      | What it's for                                                                                                                                                                       | Source of truth                                                                           |
+| --------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Core      | [`skills/core/`](./skills/core)           | The Firecrawl primitives for live web work during an agent session (search, scrape, crawl, interact — via the CLI or MCP), plus the research paper index and developer index skills | [`firecrawl/cli`](https://github.com/firecrawl/cli/tree/main/skills)                      |
+| Build     | [`skills/build/`](./skills/build)         | Integrating Firecrawl APIs into product code: SDKs, REST, endpoint selection, API keys                                                                                              | [`firecrawl` monorepo `skills/`](https://github.com/firecrawl/firecrawl/tree/main/skills) |
+| Workflows | [`skills/workflows/`](./skills/workflows) | End-to-end session recipes: lead gen, deep research, SEO audit, knowledge bases, and more                                                                                           | [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows)       |
 
 ## Contributing: where does my PR go?
 
-> **Core skills (including the research/developer index skills) → PR [`firecrawl/cli`](https://github.com/firecrawl/cli). Build/SDK skills → PR the [`firecrawl`](https://github.com/firecrawl/firecrawl) monorepo (`skills/`). Workflow skills → PR [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows). Never PR this catalog — CI overwrites every directory on the next sync.**
+- **Core skills** → PR [`firecrawl/cli`](https://github.com/firecrawl/cli).
+- **Build/SDK skills** → PR the [`firecrawl`](https://github.com/firecrawl/firecrawl) monorepo (`skills/`).
+- **Workflow skills** → PR [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows). Never PR this catalog — CI overwrites every directory on the next sync.
 
 ## Skills
 
@@ -40,20 +42,20 @@ npx -y firecrawl-cli@latest init
 
 Skills that teach agents the [Firecrawl CLI](https://github.com/firecrawl/cli) for live web work — `firecrawl`, `firecrawl-scrape`, `firecrawl-search`, `firecrawl-crawl`, `firecrawl-map`, `firecrawl-interact`, `firecrawl-agent`, `firecrawl-monitor`, `firecrawl-parse`, `firecrawl-download` — plus the index skills backing the `firecrawl research` and `firecrawl developer` commands:
 
-| Skill | Description |
-|---|---|
-| [`firecrawl-research-index`](./skills/core/firecrawl-research-index) | Find papers in the research paper index — biomedical and life-science literature (PubMed, bioRxiv, medRxiv) plus arXiv preprints |
-| [`firecrawl-developer-index`](./skills/core/firecrawl-developer-index) | Answer developer questions from issues, pull requests, READMEs, and documentation pages |
+| Skill                                                                  | Description                                                                                                                      |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| [`firecrawl-research-index`](./skills/core/firecrawl-research-index)   | Find papers in the research paper index — biomedical and life-science literature (PubMed, bioRxiv, medRxiv) plus arXiv preprints |
+| [`firecrawl-developer-index`](./skills/core/firecrawl-developer-index) | Answer developer questions from issues, pull requests, READMEs, and documentation pages                                          |
 
 ### Build (`skills/build/`)
 
-| Skill | Description |
-|---|---|
-| [`firecrawl-build`](./skills/build/firecrawl-build) | Firecrawl application API umbrella skill |
-| [`firecrawl-build-onboarding`](./skills/build/firecrawl-build-onboarding) | Get `FIRECRAWL_API_KEY` into a project and choose the right SDK/docs |
-| [`firecrawl-build-scrape`](./skills/build/firecrawl-build-scrape) | Integrate `/scrape` for single-page extraction |
-| [`firecrawl-build-search`](./skills/build/firecrawl-build-search) | Integrate `/search` for discovery-first workflows |
-| [`firecrawl-build-interact`](./skills/build/firecrawl-build-interact) | Integrate `/interact` for clicks, forms, and dynamic flows after scrape |
+| Skill                                                                     | Description                                                             |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| [`firecrawl-build`](./skills/build/firecrawl-build)                       | Firecrawl application API umbrella skill                                |
+| [`firecrawl-build-onboarding`](./skills/build/firecrawl-build-onboarding) | Get `FIRECRAWL_API_KEY` into a project and choose the right SDK/docs    |
+| [`firecrawl-build-scrape`](./skills/build/firecrawl-build-scrape)         | Integrate `/scrape` for single-page extraction                          |
+| [`firecrawl-build-search`](./skills/build/firecrawl-build-search)         | Integrate `/search` for discovery-first workflows                       |
+| [`firecrawl-build-interact`](./skills/build/firecrawl-build-interact)     | Integrate `/interact` for clicks, forms, and dynamic flows after scrape |
 
 ### Workflows (`skills/workflows/`)
 
