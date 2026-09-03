@@ -27,13 +27,13 @@ npx -y firecrawl-cli@latest init
 | Category | Path | What it's for | Source of truth |
 |---|---|---|---|
 | Core | [`skills/core/`](./skills/core) | The Firecrawl primitives for live web work during an agent session (search, scrape, crawl, interact — via the CLI or MCP), plus the research paper index and developer index skills | [`firecrawl/cli`](https://github.com/firecrawl/cli/tree/main/skills) |
-| Build | [`skills/build/`](./skills/build) | Integrating Firecrawl APIs into product code: SDKs, REST, endpoint selection, API keys | [`firecrawl` monorepo `skills/`](https://github.com/firecrawl/firecrawl/tree/main/skills) |
+| Build | [`skills/build/`](./skills/build) | Integrating Firecrawl APIs into product code: SDKs, REST, endpoint selection, API keys | [`firecrawl/firecrawl`](https://github.com/firecrawl/firecrawl/tree/main/skills) (`skills/`) |
 | Workflows | [`skills/workflows/`](./skills/workflows) | End-to-end session recipes: lead gen, deep research, SEO audit, knowledge bases, and more | [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows) |
 
 ## Contributing: where does my PR go?
 
 - **Core skills, including the research and developer index skills** → PR [`firecrawl/cli`](https://github.com/firecrawl/cli).
-- **Build/SDK skills** → PR the [`firecrawl`](https://github.com/firecrawl/firecrawl) monorepo (`skills/`).
+- **Build/SDK skills** → PR [`firecrawl/firecrawl`](https://github.com/firecrawl/firecrawl) (`skills/`).
 - **Workflow skills** → PR [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows).
 
 Do not submit changes to files under `skills/` in this catalog. CI replaces those directories during the next source sync. Repository-level metadata is maintained here.
