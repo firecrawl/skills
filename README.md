@@ -2,7 +2,7 @@
 
 The full catalog of Firecrawl skills for AI coding agents, following the [Agent Skills](https://agentskills.io) format. Available as a plugin for Claude Code, Cursor, and OpenAI Codex.
 
-> **This repo is read-only.** Every skill here is CI-synced from its source repo — see [Contributing](#contributing-where-does-my-pr-go). Install from here; contribute at the source.
+> **This repository is a distribution catalog.** Every directory under `skills/` is a CI-synced mirror. Install skills from here; contribute skill changes at the source repository. Repository-level metadata is maintained here.
 
 ## Install
 
@@ -24,17 +24,19 @@ npx -y firecrawl-cli@latest init
 
 ## Catalog layout
 
-| Category  | Path                                      | What it's for                                                                                                                                                                       | Source of truth                                                                           |
-| --------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Core      | [`skills/core/`](./skills/core)           | The Firecrawl primitives for live web work during an agent session (search, scrape, crawl, interact — via the CLI or MCP), plus the research paper index and developer index skills | [`firecrawl/cli`](https://github.com/firecrawl/cli/tree/main/skills)                      |
-| Build     | [`skills/build/`](./skills/build)         | Integrating Firecrawl APIs into product code: SDKs, REST, endpoint selection, API keys                                                                                              | [`firecrawl` monorepo `skills/`](https://github.com/firecrawl/firecrawl/tree/main/skills) |
-| Workflows | [`skills/workflows/`](./skills/workflows) | End-to-end session recipes: lead gen, deep research, SEO audit, knowledge bases, and more                                                                                           | [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows)       |
+| Category | Path | What it's for | Source of truth |
+|---|---|---|---|
+| Core | [`skills/core/`](./skills/core) | The Firecrawl primitives for live web work during an agent session (search, scrape, crawl, interact — via the CLI or MCP), plus the research paper index and developer index skills | [`firecrawl/cli`](https://github.com/firecrawl/cli/tree/main/skills) |
+| Build | [`skills/build/`](./skills/build) | Integrating Firecrawl APIs into product code: SDKs, REST, endpoint selection, API keys | [`firecrawl` monorepo `skills/`](https://github.com/firecrawl/firecrawl/tree/main/skills) |
+| Workflows | [`skills/workflows/`](./skills/workflows) | End-to-end session recipes: lead gen, deep research, SEO audit, knowledge bases, and more | [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows) |
 
 ## Contributing: where does my PR go?
 
-- **Core skills** → PR [`firecrawl/cli`](https://github.com/firecrawl/cli).
+- **Core skills, including the research and developer index skills** → PR [`firecrawl/cli`](https://github.com/firecrawl/cli).
 - **Build/SDK skills** → PR the [`firecrawl`](https://github.com/firecrawl/firecrawl) monorepo (`skills/`).
-- **Workflow skills** → PR [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows). Never PR this catalog — CI overwrites every directory on the next sync.
+- **Workflow skills** → PR [`firecrawl/firecrawl-workflows`](https://github.com/firecrawl/firecrawl-workflows).
+
+Do not submit changes to files under `skills/` in this catalog. CI replaces those directories during the next source sync. Repository-level metadata is maintained here.
 
 ## Skills
 
