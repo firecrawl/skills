@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "firecrawl-skills",
   "metadata": {
-    "description": "Firecrawl application-integration skills for Claude Code"
+    "description": "Firecrawl CLI usage and application-integration skills for Claude Code"
   },
   "owner": {
     "name": "Firecrawl",

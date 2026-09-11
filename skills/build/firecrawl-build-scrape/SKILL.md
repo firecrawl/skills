@@ -14,6 +14,8 @@ inputs:
   - name: FIRECRAWL_API_URL
     description: Optional base URL for self-hosted Firecrawl deployments.
     required: false
+references:
+  - references/freshness-and-liveness.md
 ---
 
 # Firecrawl Build Scrape
@@ -31,6 +33,13 @@ Use this when the application already has the URL and needs content from one pag
 - Return `markdown` unless the feature truly needs another format.
 - Use `onlyMainContent` for article-like pages where nav and chrome add noise.
 - Add waits or other rendering options only when the page needs them.
+
+## Freshness and Liveness
+
+- Firecrawl reuses recently indexed content, which is what makes repeat reads of the same URL fast. Set `maxAge` (milliseconds) to bound how old a reused copy may be, or `maxAge: 0` to skip index reuse for a freshness-critical read.
+- Read `metadata.cacheState` and `metadata.cachedAt` to see what you actually got.
+- A successful scrape reports what the page returned. Whether the thing the page describes is still active is a source-specific judgment your code makes.
+- See [references/freshness-and-liveness.md](references/freshness-and-liveness.md) for the tradeoff, the metadata, and the decision rule.
 
 ## Common Product Patterns
 
