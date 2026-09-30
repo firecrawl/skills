@@ -1,10 +1,7 @@
 {
   "mcpServers": {
     "firecrawl": {
-      "command": "npx",
-      "args": ["-y", "firecrawl-mcp"],
-      "env_vars": ["FIRECRAWL_API_KEY"],
-      "startup_timeout_sec": 120,
+      "url": "https://mcp.firecrawl.dev/v2/mcp-oauth",
       "omit_tools_from": ["deferred"]
     }
   }

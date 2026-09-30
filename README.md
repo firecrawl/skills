@@ -75,7 +75,15 @@ This repo serves as a plugin for multiple platforms, bundling the core and build
 - **Cursor** - `.cursor-plugin/`
 - **OpenAI Codex** - `.codex-plugin/`
 
-Install in Codex with `codex plugin marketplace add firecrawl/skills`, then `codex plugin add firecrawl@firecrawl-skills`. Codex reads its MCP server from `.codex-plugin/mcp.json` rather than the shared `.mcp.json`. It forwards `FIRECRAWL_API_KEY` from your environment (without a key the server runs keyless). It also sets `omit_tools_from = ["deferred"]` so Firecrawl tools are listed directly instead of being hidden behind Codex's `tool_search`.
+Install in Codex:
+
+```bash
+codex plugin marketplace add firecrawl/skills
+codex plugin add firecrawl@firecrawl-skills
+codex mcp login firecrawl
+```
+
+The last command opens a browser to sign in to your Firecrawl account; no API key is needed. Codex reads its MCP server from `.codex-plugin/mcp.json` rather than the shared `.mcp.json`: the hosted OAuth endpoint (`https://mcp.firecrawl.dev/v2/mcp-oauth`) with `omit_tools_from = ["deferred"]`, so Firecrawl tools are listed directly instead of being hidden behind Codex's `tool_search`. For unattended use with an API key, configure `https://mcp.firecrawl.dev/v2/mcp` with `bearer_token_env_var = "FIRECRAWL_API_KEY"` in `~/.codex/config.toml` instead.
 
 ## Prerequisites
 
